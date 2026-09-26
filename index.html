@@ -8,184 +8,242 @@
 
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf5;
+    color: #222;
+}
+
+/* NAVBAR */
+
+nav {
+    height: 70px;
+    background: #171717;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #f5b642;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #f5b642;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background: linear-gradient(
+        90deg,
+        #171717 0%,
+        #292929 55%,
+        #4a321d 100%
+    );
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f5b642;
+    color: #171717;
+    padding: 15px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+
+/* MENU */
+
+.menu-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.menu-section h2,
+.about h2,
+.contact h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.food-image {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card span {
+    color: #d58b00;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* ABOUT */
+
+.about {
+    padding: 80px 8%;
+    text-align: center;
+    background: #f3eadf;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    color: #666;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #555;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #171717;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 5%;
     }
 
-    body {
-      background: #fffaf5;
-      color: #222;
+    nav ul {
+        gap: 12px;
     }
 
-    header {
-      background: #171717;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    header h1 {
-      color: #f4b942;
-      font-size: 28px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #f4b942;
+    nav ul li a {
+        font-size: 13px;
     }
 
     .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: #2b2118;
-      color: white;
+        min-height: 500px;
+        padding: 50px 6%;
     }
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
-
-    .hero button {
-      background: #f4b942;
-      border: none;
-      padding: 13px 25px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    section {
-      padding: 55px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
+    .hero h1 {
+        font-size: 40px;
     }
 
     .menu {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
+        grid-template-columns: 1fr;
     }
 
-    .card {
-      width: 280px;
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-      transition: 0.3s;
+    .menu-section h2,
+    .about h2,
+    .contact h2 {
+        font-size: 30px;
     }
+  }
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .food {
-      font-size: 65px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: #d88900;
-      font-size: 23px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .card button {
-      background: #171717;
-      color: white;
-      border: none;
-      padding: 11px 22px;
-      border-radius: 22px;
-      cursor: pointer;
-    }
-
-    .card button:hover {
-      background: #f4b942;
-      color: #111;
-    }
-
-    .about {
-      background: #f4eadc;
-    }
-
-    .about p {
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.7;
-      color: #555;
-    }
-
-    .contact p {
-      margin: 12px;
-      font-size: 17px;
-    }
-
-    footer {
-      background: #171717;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      nav {
-        width: 100%;
-        text-align: center;
-      }
-
-      nav a {
-        margin: 0 7px;
-      }
-
-      .hero h2 {
-        font-size: 32px;
-      }
-
-      .card {
-        width: 100%;
-        max-width: 330px;
-      }
-    }
   </style>
 </head>
 
