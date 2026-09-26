@@ -1,330 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Royal Spoon Restaurant</title>
+<title>Royal Taste Restaurant</title>
 
-  <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #fffaf5;
-    color: #222;
+body{
+    font-family:Arial, sans-serif;
+    background:#fffaf3;
+    color:#222;
 }
 
 /* NAVBAR */
 
-nav {
-    height: 70px;
-    background: #171717;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+nav{
+    height:70px;
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.logo {
-    color: #f5b642;
-    font-size: 25px;
-    font-weight: bold;
+.logo{
+    color:#f5b632;
+    font-size:25px;
+    font-weight:bold;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
 }
 
-nav ul li a:hover {
-    color: #f5b642;
+nav a:hover{
+    color:#f5b632;
 }
-
 
 /* HERO */
 
-.hero {
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    padding: 60px 8%;
-    background: linear-gradient(
-        90deg,
-        #171717 0%,
-        #292929 55%,
-        #4a321d 100%
-    );
+.hero{
+    min-height:620px;
+    padding:80px 8%;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(90deg,
+    rgba(0,0,0,.92),
+    rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
 }
 
-.hero-content {
-    max-width: 600px;
+.hero-content{
+    max-width:600px;
 }
 
-.hero h1 {
-    color: white;
-    font-size: 55px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+.small-title{
+    color:#f5b632;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin-bottom:15px;
 }
 
-.hero p {
-    color: #ddd;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 30px;
+.hero h1{
+    color:white;
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:20px;
 }
 
-.btn {
-    display: inline-block;
-    background: #f5b642;
-    color: #171717;
-    padding: 15px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
+.hero h1 span{
+    color:#f5b632;
 }
 
-.btn:hover {
-    background: white;
+.hero p{
+    color:#eee;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
 }
 
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    background:#f5b632;
+    color:#111;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:white;
+}
 
 /* MENU */
 
-.menu-section {
-    padding: 80px 8%;
-    text-align: center;
+.menu-section{
+    padding:90px 8%;
+    text-align:center;
 }
 
-.menu-section h2,
-.about h2,
-.contact h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
+.section-label{
+    color:#d99b15;
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:13px;
 }
 
-.section-text {
-    color: #777;
-    margin-bottom: 40px;
+.menu-section h2{
+    font-size:42px;
+    margin:10px 0;
 }
 
-.menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.subtitle{
+    color:#777;
+    margin-bottom:45px;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+.menu{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    text-align:left;
+    box-shadow:0 8px 30px rgba(0,0,0,.1);
+    transition:.3s;
 }
 
-.food-image {
-    font-size: 70px;
-    margin-bottom: 15px;
+.card:hover{
+    transform:translateY(-8px);
 }
 
-.card h3 {
-    font-size: 23px;
-    margin-bottom: 12px;
+.food{
+    height:220px;
+    width:100%;
+    object-fit:cover;
 }
 
-.card p {
-    color: #777;
-    line-height: 1.6;
-    margin-bottom: 15px;
+.card-content{
+    padding:22px;
 }
 
-.card span {
-    color: #d58b00;
-    font-size: 22px;
-    font-weight: bold;
+.card h3{
+    font-size:23px;
+    margin-bottom:10px;
 }
 
+.card p{
+    color:#777;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.price{
+    color:#d99b15;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.order{
+    float:right;
+    background:#f5b632;
+    color:#111;
+    padding:9px 15px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
 
 /* ABOUT */
 
-.about {
-    padding: 80px 8%;
-    text-align: center;
-    background: #f3eadf;
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    background:#f1e5d4;
 }
 
-.about p {
-    max-width: 700px;
-    margin: auto;
-    color: #666;
-    line-height: 1.8;
-    font-size: 17px;
+.about-image{
+    width:100%;
+    height:420px;
+    object-fit:cover;
 }
 
+.about-content{
+    padding:60px;
+}
+
+.about-content h2{
+    font-size:42px;
+    margin:12px 0 20px;
+}
+
+.about-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
 
 /* CONTACT */
 
-.contact {
-    padding: 80px 8%;
-    text-align: center;
+.contact{
+    background:#151515;
+    color:white;
+    text-align:center;
+    padding:75px 8%;
 }
 
-.contact p {
-    margin: 12px 0;
-    color: #555;
+.contact h2{
+    font-size:40px;
+    margin:10px 0 35px;
 }
 
+.contact-box{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+.contact-item{
+    min-width:180px;
+}
+
+.contact-item .icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.contact-item h3{
+    color:#f5b632;
+    margin-bottom:7px;
+}
+
+.contact-item p{
+    color:#bbb;
+}
 
 /* FOOTER */
 
-footer {
-    background: #171717;
-    color: #aaa;
-    text-align: center;
-    padding: 25px;
+footer{
+    background:#0c0c0c;
+    color:#888;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
 }
-
 
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-    nav {
-        padding: 0 5%;
+    nav{
+        padding:0 5%;
     }
 
-    nav ul {
-        gap: 12px;
+    .logo{
+        font-size:20px;
     }
 
-    nav ul li a {
-        font-size: 13px;
+    nav ul{
+        gap:12px;
     }
 
-    .hero {
-        min-height: 500px;
-        padding: 50px 6%;
+    nav a{
+        font-size:12px;
     }
 
-    .hero h1 {
-        font-size: 40px;
+    .hero{
+        min-height:550px;
+        padding:60px 6%;
     }
 
-    .menu {
-        grid-template-columns: 1fr;
+    .hero h1{
+        font-size:42px;
     }
 
-    .menu-section h2,
-    .about h2,
-    .contact h2 {
-        font-size: 30px;
+    .menu{
+        grid-template-columns:1fr;
     }
-  }
 
-  </style>
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-content{
+        padding:45px 7%;
+    }
+
+    .about-content h2{
+        font-size:34px;
+    }
+
+    .contact-box{
+        gap:35px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Royal Spoon 🍽️</h1>
+<!-- NAVBAR -->
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<nav>
 
-  <section class="hero" id="home">
-    <h2>Delicious Food, Royal Taste</h2>
-    <p>Fresh ingredients. Great flavors. Memorable moments.</p>
-    <button onclick="location.href='#menu'">Explore Menu</button>
-  </section>
+    <div class="logo">
+        👑 Royal Taste
+    </div>
 
-  <section id="menu">
-    <h2>Our Special Menu</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            GOOD FOOD • GREAT VIBES
+        </div>
+
+        <h1>
+            Delicious Food,<br>
+            <span>Beautiful Moments.</span>
+        </h1>
+
+        <p>
+            Experience delicious food made with fresh ingredients
+            and served with love. Your perfect dining experience
+            starts here.
+        </p>
+
+        <a href="#menu" class="btn">
+            View Our Menu →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+    <div class="section-label">
+        OUR MENU
+    </div>
+
+    <h2>Popular Dishes</h2>
+
+    <p class="subtitle">
+        Fresh ingredients. Authentic taste. Always.
+    </p>
+
 
     <div class="menu">
 
-      <div class="card">
-        <div class="food">🍔</div>
-        <h3>Royal Beef Burger</h3>
-        <p>Juicy beef patty with fresh vegetables and signature sauce.</p>
-        <div class="price">$11.99</div>
-        <button>Order Now</button>
-      </div>
+        <!-- BURGER -->
 
-      <div class="card">
-        <div class="food">🍕</div>
-        <h3>Cheese Supreme Pizza</h3>
-        <p>Golden crust topped with rich cheese and fresh ingredients.</p>
-        <div class="price">$14.99</div>
-        <button>Order Now</button>
-      </div>
+        <div class="card">
 
-      <div class="card">
-        <div class="food">🍗</div>
-        <h3>Crispy Chicken</h3>
-        <p>Crunchy golden chicken served with our special dipping sauce.</p>
-        <div class="price">$12.49</div>
-        <button>Order Now</button>
-      </div>
+            <img
+            class="food"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=90">
 
-      <div class="card">
-        <div class="food">🍝</div>
-        <h3>Italian Alfredo Pasta</h3>
-        <p>Creamy pasta prepared with herbs and premium ingredients.</p>
-        <div class="price">$13.49</div>
-        <button>Order Now</button>
-      </div>
+            <div class="card-content">
+
+                <h3>Classic Burger</h3>
+
+                <p>
+                    Juicy beef burger with fresh vegetables
+                    and our special sauce.
+                </p>
+
+                <span class="price">$12</span>
+
+                <a href="#contact" class="order">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PIZZA -->
+
+        <div class="card">
+
+            <img
+            class="food"
+            src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Italian Pizza</h3>
+
+                <p>
+                    Freshly baked pizza topped with cheese
+                    and delicious toppings.
+                </p>
+
+                <span class="price">$15</span>
+
+                <a href="#contact" class="order">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASTA -->
+
+        <div class="card">
+
+            <img
+            class="food"
+            src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=90">
+
+            <div class="card-content">
+
+                <h3>Creamy Pasta</h3>
+
+                <p>
+                    Rich and creamy pasta prepared with
+                    our special recipe.
+                </p>
+
+                <span class="price">$13</span>
+
+                <a href="#contact" class="order">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
-  </section>
 
-  <section class="about" id="about">
-    <h2>About Royal Spoon</h2>
-    <p>
-      Royal Spoon is a modern restaurant serving delicious food
-      made with fresh ingredients and passion. Our goal is to make
-      every meal special and memorable.
-    </p>
-  </section>
+</section>
 
-  <section class="contact" id="contact">
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <img
+    class="about-image"
+    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=90">
+
+    <div class="about-content">
+
+        <div class="section-label">
+            ABOUT US
+        </div>
+
+        <h2>Our Story</h2>
+
+        <p>
+            Royal Taste is a modern restaurant focused on
+            great food, friendly service, and unforgettable
+            dining experiences.
+        </p>
+
+        <p>
+            We use fresh, high-quality ingredients to bring
+            you delicious flavors in a warm and comfortable
+            environment.
+        </p>
+
+        <a href="#contact" class="btn">
+            Visit Us →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-label">
+        GET IN TOUCH
+    </div>
+
     <h2>Visit Us</h2>
-    <p>📍 Downtown City Center</p>
-    <p>📞 +1 555 123 4567</p>
-    <p>✉️ hello@royalspoon.com</p>
-  </section>
 
-  <footer>
-    © 2026 Royal Spoon. All Rights Reserved.
-  </footer>
+    <div class="contact-box">
+
+        <div class="contact-item">
+
+            <div class="icon">📍</div>
+
+            <h3>Location</h3>
+
+            <p>Kathmandu, Nepal</p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <div class="icon">📞</div>
+
+            <h3>Phone</h3>
+
+            <p>+977 9800000000</p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <div class="icon">✉️</div>
+
+            <h3>Email</h3>
+
+            <p>royaltaste@example.com</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Royal Taste Restaurant. All Rights Reserved.
+
+</footer>
 
 </body>
-</html>
+                  </html>
